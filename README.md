@@ -1,23 +1,23 @@
-# F12 Tech v2.0 - Enhanced Edition
+# F12 Tech v1.0.0
 
-**F12 Tech** là Chrome Extension mạnh mẽ cho phép bạn chọn và chỉnh sửa trực tiếp các phần tử trên bất kỳ trang web nào, và **lưu thay đổi cục bộ** để tự động áp dụng lại khi bạn refresh trang.
+**F12 Tech** is a powerful Chrome Extension that allows you to select and edit any element on any web page, and **save changes locally** to automatically re-apply them when you refresh the page.
 
-## ✨ Tính năng mới trong v2.0
+## ✨ Features
 
 ### 🎯 Selector Engine v2
-- **Multi-strategy selection**: Tự động thử nhiều chiến lược để tìm selector ổn định nhất
+- **Multi-strategy selection**: Automatically tries multiple strategies to find the most stable selector
   - ID selector
   - Data attributes (`data-*`)
   - ARIA attributes (`aria-label`, `role`, etc.)
   - Link/Image selectors (`href`, `src`)
   - Class-based selectors
-  - Path-based selectors với `:nth-of-type`
-  - XPath fallback cho trường hợp phức tạp
-- **Selector caching**: Cache kết quả để tăng performance
+  - Path-based selectors with `:nth-of-type`
+  - XPath fallback for complex cases
+- **Selector caching**: Caches results for better performance
 
-### 🖱️ Element Picker cải tiến
-- **Visual overlay**: Hiển thị info box với thông tin chi tiết khi hover
-- **Highlight chính xác**: Box highlight với margin indicators
+### 🖱️ Enhanced Element Picker
+- **Visual overlay**: Displays info box with detailed information on hover
+- **Precise highlighting**: Highlight box with margin indicators
 - **Keyboard navigation**: 
   - `↑` Parent element
   - `↓` First child
@@ -25,111 +25,114 @@
   - `→` Next sibling
   - `Enter` Confirm selection
   - `Esc` Cancel picking
-- **Lasso selection**: Giữ `Alt` + kéo chuột để chọn theo vùng
-- **Multi-select**: Giữ `Shift`/`Ctrl` + click để chọn nhiều phần tử
+- **Lasso selection**: Hold `Alt` + drag to select by area
+- **Multi-select**: Hold `Shift`/`Ctrl` + click to select multiple elements
 
-### ⚡ Performance tối ưu
-- **Throttled MutationObserver**: Giảm lag trên các trang SPA
-- **Debounced save**: Tránh ghi storage quá nhiều
-- **Smart re-apply**: Chỉ apply patches khi DOM thực sự thay đổi
+### ⚡ Performance Optimized
+- **Throttled MutationObserver**: Reduces lag on SPA pages
+- **Debounced save**: Prevents excessive storage writes
+- **Smart re-apply**: Only applies patches when DOM actually changes
 
-### 🎨 UI hiện đại
-- **Draggable panel**: Kéo thả panel đến vị trí mong muốn
-- **Tabbed interface**: Giao diện tab gọn gàng
-- **Quick actions**: Ẩn/Xóa phần tử nhanh
-- **Dark theme**: Thiết kế tối hiện đại
+### 🎨 Modern UI
+- **Draggable panel**: Drag and drop panel to desired position
+- **Tabbed interface**: Clean tabbed layout
+- **Quick actions**: Hide/Remove elements quickly
+- **Dark theme**: Modern dark design
 
-## 📦 Cài đặt
+## 📦 Installation
 
 ### Chrome / Edge / Brave / Chromium
-1. Download hoặc clone thư mục extension
-2. Mở `chrome://extensions`
-3. Bật **Developer mode** (góc trên phải)
-4. Click **Load unpacked** → chọn thư mục `F12_Tech_Extension`
+1. Download or clone the extension folder
+2. Open `chrome://extensions`
+3. Enable **Developer mode** (top right corner)
+4. Click **Load unpacked** → select the `F12_Tech_Extension` folder
 
-## 🚀 Cách dùng
+## 🚀 Usage
 
-### Bật/Tắt Editor
-- Click icon extension trên toolbar
-- Hoặc dùng phím tắt: `Ctrl+Shift+E` (Windows/Linux) / `Cmd+Shift+E` (Mac)
+### Toggle Editor
+- Click the extension icon on the toolbar
+- Or use keyboard shortcut: `Ctrl+Shift+E` (Windows/Linux) / `Cmd+Shift+E` (Mac)
 
-### Chọn phần tử
-1. Click nút **"🎯 Chọn phần tử"**
-2. Di chuột để highlight phần tử
-3. Click để chọn (hoặc `Shift+Click` để chọn nhiều)
-4. Dùng phím mũi tên để navigate DOM
-5. Press `Esc` hoặc click nút để dừng chọn
+### Pick Element
+1. Click the **"🎯 Pick Element"** button
+2. Hover to highlight elements
+3. Click to select (or `Shift+Click` to select multiple)
+4. Use arrow keys to navigate DOM
+5. Press `Esc` or click the button to stop picking
 
-### Chỉnh sửa
-- **Text**: Thay đổi nội dung text
-- **HTML**: Thay đổi innerHTML
-- **Style**: Append hoặc Replace CSS inline
-- **Attr**: Thay đổi attribute (href, src, class, etc.)
+### Editing
+- **Text**: Change text content
+- **HTML**: Change innerHTML
+- **Style**: Append or Replace inline CSS
+- **Attr**: Change attributes (href, src, class, etc.)
 
 ### Quick Actions
-- **🙈 Ẩn**: Ẩn phần tử (display: none)
-- **🗑️ Xóa**: Xóa phần tử khỏi DOM
+- **🙈 Hide**: Hide element (display: none)
+- **🗑️ Remove**: Remove element from DOM
 - **📋 Copy Selector**: Copy CSS selector
-- **🔍 Inspect**: Log ra console
+- **🔍 Inspect**: Log to console
 
-### Phạm vi lưu (Scope)
-- **URL đầy đủ**: Chỉ áp dụng cho URL chính xác (bao gồm query params)
-- **Theo path**: Áp dụng cho tất cả URL có cùng path
-- **Theo domain**: Áp dụng cho toàn bộ domain
+### Save Scope
+- **Exact URL**: Only applies to exact URL (including query params)
+- **Path Only**: Applies to all URLs with same path
+- **Domain Only**: Applies to entire domain
 
 ### Export/Import
-- Click tab **History** để xem các thay đổi đã lưu
-- **Export**: Copy JSON để backup
-- **Import**: Paste JSON để restore
+- Click the **History** tab to view saved changes
+- **Export**: Copy JSON for backup
+- **Import**: Paste JSON to restore
 
-## 🔧 Các loại Patch
+## 🔧 Patch Types
 
-| Type | Mô tả |
-|------|-------|
-| `text` | Thay đổi textContent |
-| `html` | Thay đổi innerHTML |
-| `style_append` | Thêm CSS vào cuối style hiện tại |
-| `style_replace` | Ghi đè toàn bộ style |
-| `attr` | Thay đổi attribute |
-| `hide` | Ẩn phần tử (display: none) |
-| `remove` | Xóa phần tử khỏi DOM |
+| Type | Description |
+|------|-------------|
+| `text` | Change textContent |
+| `html` | Change innerHTML |
+| `style_append` | Append CSS to existing style |
+| `style_replace` | Replace entire style |
+| `attr` | Change attribute |
+| `hide` | Hide element (display: none) |
+| `remove` | Remove element from DOM |
 
-## ⚠️ Lưu ý
+## ⚠️ Notes
 
-- Thay đổi chỉ có hiệu lực **trong trình duyệt của bạn**
-- Không thay đổi dữ liệu trên server
-- Một số trang web có CSP nghiêm ngặt có thể không hoạt động
-- Trang SPA/React có thể cần selector ổn định hơn (dùng scope "Theo domain")
+- Changes only take effect **in your browser**
+- Does not modify data on the server
+- Some websites with strict CSP may not work
+- SPA/React pages may need more stable selectors (use "Domain Only" scope)
 
 ## 🐛 Troubleshooting
 
-### Selector không tìm thấy phần tử
-- Thử đổi scope sang "Theo domain" hoặc "Theo path"
-- Trang có thể đã thay đổi DOM structure
-- Xóa patch cũ và tạo lại
+### Selector can't find element
+- Try changing scope to "Domain Only" or "Path Only"
+- The page may have changed DOM structure
+- Delete old patch and recreate
 
-### Extension không hoạt động
-- Refresh trang sau khi cài extension
-- Kiểm tra console (F12) để xem lỗi
-- Một số trang (chrome://, extensions) không hỗ trợ
+### Extension not working
+- Refresh page after installing extension
+- Check console (F12) for errors
+- Some pages (chrome://, extensions) are not supported
 
-### Thay đổi bị mất
-- Kiểm tra scope có đúng không
-- Export patches để backup thường xuyên
+### Changes lost
+- Check if scope is correct
+- Export patches for regular backup
 
 ## 📝 Changelog
 
-### v2.0.0
-- 🎯 Selector Engine v2 với multi-strategy
-- 🖱️ Enhanced Element Picker với keyboard navigation
+### v1.0.0
+- 🎯 Selector Engine with multi-strategy
+- 🖱️ Enhanced Element Picker with keyboard navigation
 - ⚡ Performance optimization
-- 🎨 Modern UI với draggable panel
+- 🎨 Modern UI with draggable panel
 - 🔧 Quick actions (Hide, Remove, Copy, Inspect)
-- 💾 Improved undo system
+- 💾 Undo system
 - 📦 XPath fallback support
 
-### v1.0.0
-- Initial release
+## 👨‍💻 Author
+
+**DIEP VAN TIEN**
+- GitHub: [@diepvantien](https://github.com/diepvantien)
+- Donate: [Buymeacoffee](https://buymeacoffee.com/tixuno) | [MoMo](https://me.momo.vn/OeIGiJsViJfDfntmiRId)
 
 ## 📄 License
 

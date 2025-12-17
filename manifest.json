@@ -1,7 +1,7 @@
 {
   "name": "F12 Tech",
-  "description": "Edit any element on web pages and persist changes after refresh (saved locally in browser). Version 2.0 with powerful selector engine.",
-  "version": "2.0.0",
+  "description": "Edit any element on web pages and persist changes after refresh (saved locally in browser).",
+  "version": "1.0.0",
   "manifest_version": 3,
   "permissions": [
     "storage",
